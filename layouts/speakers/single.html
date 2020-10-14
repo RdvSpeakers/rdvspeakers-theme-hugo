@@ -10,7 +10,7 @@
 			<ul class="socials">
 				{{ range .Page.Params.socials }}
 				<li>
-					<a href="{{ .link }}" class="social" rel="noreferrer" target="_blank">
+					<a href="{{ .link }}" class="social" rel="noopener noreferrer" target="_blank">
 						{{ partial "icon.html" .icon }}
 						{{ .name }}
 					</a>
@@ -33,10 +33,9 @@
 						<span>{{ .name }}</span>
 						{{ end }}
 					{{ end }}
-				</div>		
-				<a href="{{ .Permalink }}" class="talk">
-					<span class="language {{ anchorize .Params.language }}"></span>
-					<h3 class="text">{{ .Title }}</h3>
+				</div>
+				<span class="language {{ anchorize .Params.language }}"></span>
+				<h3 class="text">{{ .Title }}</h3>
 				</a>
 			</li>
 			{{ end }}
