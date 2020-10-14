@@ -1,10 +1,10 @@
-# DevFest Theme Hugo
+# RdvSpeakers Theme Hugo
 
-DevFest Theme Hugo is a theme for conferences/events.
+RdvSpeakers Theme Hugo is a theme for conferences/events.
 
-It's developed for the 2019 version of Devfest Toulouse.
+It's based on the GDG Toulouse's DevFest Theme Hugo.
 
-See a real usage here: <https://2019.devfesttoulouse.fr/>
+See a real usage here: <https://rdv-speakers.fr/>
 
 ## Building my conference site from scratch
 
@@ -15,14 +15,14 @@ See a real usage here: <https://2019.devfesttoulouse.fr/>
 hugo new site my-conf
 cd my-conf
 mkdir themes
-git submodule add https://github.com/GDGToulouse/devfest-theme-hugo.git themes/devfest-theme-hugo
+git submodule add https://github.com/RdvSpeakers/rdvspeakers-theme-hugo.git themes/rdvspeakers-theme-hugo
 ```
 
 3. Then edit your `config.toml` file with
 
 ```toml
 # ...
-theme = "devfest-theme-hugo"
+theme = "rdvspeakers-theme-hugo"
 # ...
 ```
 
@@ -55,34 +55,29 @@ enableMissingTranslationPlaceholders = true
 googleAnalytics = "UA-XXXXXXXX-X"
 
 [params]
-    title = "DevFest Toulouse 2019"
-    date = "2019-10-03"
-    description = "The DevFest, or 'Developers Festival', is a technical conference for developers. It is aimed at students, professionals or simply curious technophiles."
+    title = "Le Halloween des Speakers 2020"
+    date = "2020-02-28"
+    description = "*Le Halloween des Speakers* is a technical conference for developers, organized by *Les Rendez-vous des Speakers* association. Taking into account the health situation, the 2020 edition of *Le Halloween des Speakers* will be online..."
     images = ["/images/social-share.jpg"]
-    email = "contact@devfesttoulouse.fr"
-    keywords = "event, gdg, gde, devfest, google, programming, android, chrome, developers, web, cloud, androiddev"
-    copyright = "We :heart:️ chocolatines"
-    cfpUrl = "https://conference-hall.io/public/event/HJRThubF4uYPkb7jSUxi"
-    subscriptionUrl = "http://eepurl.com/dps1j5"
+    email = "rentreespeakers@gmail.com"
+    keywords = "event, conference, speakers, programming, developers"
+    copyright = "We ❤️️ speakers"
+    subscriptionUrl = ""
+    sponsorshipUrl=""
     appleTouchIcon = "/apple-touch-icon.png"
+    favicon48 = "/favicon-48x48.png"
     favicon32 = "/favicon-32x32.png"
     favicon16 = "/favicon-16x16.png"
     manifest = "/manifest.json"
     safariPinnedTab = "/safari-pinned-tab.svg"
-    themeColor = "#673ab7"
+    themeColor = "#4d4d4d"
+    env="production"
 
 [params.logos]
     jumbo = "/images/logos/logo_color_text.png"
     header = "/images/logos/logo_color_text.png"
     footer = "/images/logos/logo_gray_text.png"
 
-#[menu]
-#[[menu.main]]
-#    identifier = "jobs"
-#    name = "Jobs"
-#    url = "https://jobs.devfesttoulouse.fr/"
-#    weight = 200
-#    external = true
 
 [languages]
 [languages.en]
@@ -94,7 +89,7 @@ googleAnalytics = "UA-XXXXXXXX-X"
     languageName = "fr"
 
 [languages.fr.params]
-    description = "Le DevFest, ou 'Developers Festival', est une conférence technique destinée aux développeurs. Elle s'adresse aussi bien aux étudiants, aux professionnels ou tout simplement aux curieux technophiles."
+    description = "*Le Halloween des Speakers*, est une conférence technique organisée par l'association *Les Rendez-vous des Speakers* et destinée aux développeurs et développeuses. Elle s'adresse aussi bien aux étudiant•e•s, aux professionnels ou tout simplement aux curieux et curieuses technophiles. Situation sanitaire oblige, l'édition 2020 de *Le Halloween des Speakers* se fera en ligne."
 
 [taxonomies]
   tag = "tags"
@@ -122,44 +117,20 @@ The footer is build with
 ```yml
 share:
   - name: facebook
-    url: https://www.facebook.com/sharer.php?u=
+    url: https://rentreespeakers.fr/
   - name: twitter
-    url: https://twitter.com/intent/tweet?text=
+    url: https://rentreespeakers.fr/
 
 follow:
-  - name: facebook
-    url: https://www.facebook.com/GDGToulouse/
   - name: twitter
-    url: https://twitter.com/devfesttoulouse
-  - name: linkedin
-    url: https://www.linkedin.com/company/devfesttoulouse/
-  - name: youtube
-    url: https://www.youtube.com/channel/UCx83f-KzDd3o1QK2AdJIftg
+    url: https://twitter.com/RentreeSpeakers
 
 content:
   - title: footer_about
     links:
-      - name: GDG Toulouse
-        url: http://gdgtoulouse.fr/
-        newTab: true
-      - name: Google Developers Group
-        url: https://developers.google.com/
-        newTab: true
       - nameKey: footer_coc
         url: /code-of-conduct/
         newTab: false
-
-  - title: footer_previous_edition
-    links:
-      - name: DevFest Toulouse 2018
-        url: https://2018.devfesttoulouse.fr/
-        newTab: true
-      - name: DevFest Toulouse 2017
-        url: https://2017.devfesttoulouse.fr/
-        newTab: true
-      - name: DevFest Toulouse 2016
-        url: https://2016.devfesttoulouse.fr/
-        newTab: true
 ```
 
 ### Home
@@ -169,12 +140,12 @@ The Home page is build with markdown and calling some shortcodes.
 #### Jumbo bloc
 
 ```hugo
-{{% jumbo img="/images/backgrounds/back-0.jpg" imgLabel="DevFest Toulouse 2019" %}}
 
-![](/images/logos/devfest_color_text.png)
+{{% jumbo img="/images/backgrounds/back-01.jpg" imgLabel="La Rentrée des Speakers 2020" %}}
 
-## October 3rd, 2019
-### Pierre Baudis congress center
+
+## October 26th-30th, 2020
+### Online
 
 {{% /jumbo %}}
 
@@ -185,11 +156,14 @@ The Home page is build with markdown and calling some shortcodes.
 With main description and key figures.
 
 ```hugo
-{{% home-info what="Participants:900,Day:1,Sessions:36,Parallel Tracks:4" class="primary" %}}
-## What is DevFest Toulouse?
+{{% home-info what="Attendees:150,Days:5,Sessions:12" class="primary" %}}
 
-The DevFest, or 'Developers Festival', is a technical conference for developers. 
-It is aimed at students, professionals or simply curious technophiles.
+## What is *Le Halloween des Speakers*?
+
+*Le Halloween des Speakers* is a technical conference for developers, organized by *Les Rendez-vous des Speakers* association. 
+
+
+Taking into account the health situation, the 2020 edition of *Le Halloween des Speakers* will be online...
 {{% /home-info %}}
 ```
 

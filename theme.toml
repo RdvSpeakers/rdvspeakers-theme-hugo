@@ -1,12 +1,12 @@
-name = "Devfest Toulouse Theme"
+name = "Les Rendez-vous des Speakers Theme"
 license = "MIT"
-licenselink = "https://github.com/GDGToulouse/devfest-theme-hugo/LICENSE"
-description = "A theme for a conference website. Created for DevFest Toulouse 2019"
-homepage = "https://github.com/GDGToulouse/devfest-theme-hugo"
-tags = ["conference", "DevFest"]
+licenselink = "https://github.com/RdvSpeakers/rdvspeakers-theme-hugo/LICENSE"
+description = "A theme for a conference website. Forked from GDGToulouse DevFest Theme"
+homepage = "https://github.com/RdvSpeakers/rdvspeakers"
+tags = ["conference", "RdvSpeakers", "Les Rendez-vous des Speakers"]
 features =  ["conference", "responsive", "l10n", "google-analytics"]
 min_version = "0.50"
 
 [author]
-  name = "GDG Toulouse"
-  homepage = "//github.com/GDGToulouse"
+  name = "Les Rendez-vous des Speakers Theme"
+  homepage = "https://github.com/RdvSpeakers"
