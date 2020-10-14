@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+{{ .Content }}
+
+<section>
+		{{ $sessions := where $.Site.AllPages ".Section" "sessions" }}
+		{{ $types := apply $.Site.Data.formats "index" "." "key"  }}
+		
+		{{ range slice "1" "2" "3" }}
+			{{ $day := where $sessions ".Params.day" ( int . ) }}
+
+			<h2>{{ index $.Site.Params.days . }}</h2>
+
+			<ul class="talks">
+			{{ range sort $day ".Params.key" }}	
+				{{ if intersect (slice .Params.format) $types }}
+					<li class="talk tag-{{ anchorize (delimit (.Params.tags | default (slice)) "" ) }}">{{ partial "session.html" . }}</li>
+				{{ end }}
+			{{ end }}
+			</ul>
+
+			<p></p>
+
+		{{ end }}
+
+
+
+		
+	</ul>
+</section>
+
+{{ end }}
