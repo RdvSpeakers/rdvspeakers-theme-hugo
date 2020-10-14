@@ -1,8 +1,8 @@
-body>footer {
-  background-color: var(--footer-bg);
-  color: var(--footer-fg);
+body > footer {
+  background-color: var(--darken-1);
+  color: var(--base-secondary-text);
   font-weight: 200;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
 
   .bottom-content {
     max-width: var(--theJdrSize);
@@ -21,16 +21,16 @@ body>footer {
     flex-wrap: wrap;
     text-transform: uppercase;
 
-    .header {
+    header {
       margin-right: var(--space-2);
     }
 
-    &>div {
+    & > div {
       display: flex;
       align-items: center;
+      margin-bottom: 1rem;
 
       ul.social-list {
-        font-size: 1.5em;
         padding: 0;
         margin: 0;
         list-style: none;
@@ -40,25 +40,19 @@ body>footer {
         li {
           display: inline-block;
           padding: var(--space-2);
-          margin-right: var(--space-3);
         }
       }
     }
 
     .follow a.social {
-      opacity: 0.75;
+      opacity: .75;
       filter: grayscale(1);
       transition: filter var(--animation);
 
-      &:hover,
-      &:focus {
+      &:hover, &:focus {
         opacity: 1;
         filter: grayscale(0);
       }
-    }
-
-    .blog {
-      display: none;
     }
 
     .blog a {
@@ -68,7 +62,6 @@ body>footer {
     .email a {
       display: flex;
       align-items: center;
-
       .icon {
         width: 1em;
         height: 1em;
@@ -81,6 +74,14 @@ body>footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: var(--space-4);
+
+    .subscribe {
+
+      a.btn {
+        color: var(--link-secondary-text);
+      }
+    }
 
     section {
       margin: var(--space-2) var(--space-4);
@@ -97,7 +98,7 @@ body>footer {
         margin-right: 0;
       }
 
-      .header {
+      header {
         font-size: 1.125rem;
         font-weight: 600;
         margin-bottom: var(--space-2);
@@ -108,15 +109,12 @@ body>footer {
         flex-direction: column;
         list-style: none;
         padding: 0;
-        margin: var(--space-1) 0;
+        margin: var(--space-3) 0;
         font-weight: 100;
+        font-size: 0.9rem;
 
         li {
-          margin: var(--space-2) 0;
-
-          a {
-            padding: var(--space-3) 0;
-          }
+          margin: var(--space-1) 0;
         }
       }
     }
@@ -127,12 +125,12 @@ body>footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: var(--space-4);
 
     @include mq($until: md) {
       flex-direction: column;
       align-items: start;
-
-      >* {
+      > * {
         margin: var(--space-2) 0;
       }
     }
@@ -141,11 +139,5 @@ body>footer {
       height: 2rem;
       width: auto;
     }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .follow a.social {
-    filter: grayscale(0.75);
   }
 }

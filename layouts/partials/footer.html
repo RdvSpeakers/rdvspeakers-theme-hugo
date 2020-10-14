@@ -3,26 +3,26 @@
 
 		<div class="footer-header">
 			<div class="share">
-				<div class="header">{{ i18n "footer_share" }}</div>
+				<header>{{ i18n "footer_share" }}</header>
 				<ul class="social-list">
 					{{ range .Site.Data.footer.share }}
-					<li>
-						{{ $url := .URL | relLangURL }}
-						{{ partial "social-sharer.html" (dict "context" . "url" $url "name" .name) }}
+					<li> 
+						{{ $url := .url | relLangURL }}
+						{{ partial "social-sharer.html" (dict "context" . "url" .url "name" .name) }}
 						{{ end }}
 				</ul>
 			</div>
 			<div class="blog">
-				<div class="header">
+				<header>
 					{{ i18n "footer_follow_blog" }} <a href="{{ "blog/" | relLangURL }}">{{ i18n "footer_follow_blog_blog" }}</a>
-				</div>
+				</header>
 			</div>
 			<div class="follow">
-				<div class="header">{{ i18n "footer_follow_us" }}</div>
+				<header>{{ i18n "footer_follow_us" }}</header>
 				<ul class="social-list">
 					{{ range .Site.Data.footer.follow }}
 					<li>
-						<a href="{{ .url }}" class="social" rel="noopener noreferrer" target="_blank">
+						<a href="{{ .url }}" class="social" rel="noreferrer" target="_blank">
 							{{ partial "icon.html" .name }}
 							{{ .name }}
 						</a>
@@ -43,12 +43,12 @@
 		<div class="footer-content">
 			{{ range .Site.Data.footer.content }}
 			<section>
-				<div class="header">{{ i18n .title }}</div>
+				<header>{{ i18n .title }}</header>
 				{{ if .links }}
 				<ul>
 					{{ range .links }}
 					<li>
-						<a href="{{ .url }}" {{ if .newTab }}target="_blank" rel="noopener noreferrer" {{end}}>
+						<a href="{{ .url }}" {{ if .newTab }}target="_blank" rel="noopener" {{end}}>
 							{{ if .nameKey }}
 							{{ i18n .nameKey }}
 							{{ else }}
@@ -63,10 +63,10 @@
 			{{ end }}
 			{{ if .Site.Params.subscriptionUrl }}
 			<section class="subscribe">
-				<div class="header">{{ i18n "newsletter" }}</div>
+				<header>{{ i18n "newsletter" }}</header>
 				<p>{{ i18n "subscribe_notice" }}</p>
 				<a href="{{ .Site.Params.subscriptionUrl }}"
-				   class="btn" rel="noopener noreferrer" target="_blank">
+				   class="btn" rel="noreferrer" target="_blank">
 					{{ partial "icon.html" "subscribe" }}
 					{{- i18n "subscribe_action" -}}
 				</a>
