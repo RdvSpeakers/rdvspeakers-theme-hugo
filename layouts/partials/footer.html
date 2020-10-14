@@ -80,8 +80,16 @@
 			{{ if .Site.Params.logos.footer }}
 			<img src="{{ .Site.Params.logos.footer }}" alt="{{ .Site.Title }}">
 			{{ end }}
+
+			{{ if .Site.Params.footer.credits }}
+			<ul>
+				{{ range .Site.Params.footer.credits }}
+				<li> {{ safeHTML . }} </li>
+				{{ end }}
+			</ul>
+			{{ end }}
+
 			<div>{{ emojify .Site.Params.copyright }}</div>
 		</div>
-
 	</div>
 </footer>
