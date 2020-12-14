@@ -4,7 +4,7 @@
 
 <body class="{{ .Kind }} {{ anchorize .URL }} {{ .Section }}">
 
-{{ readFile "themes/devfest-theme-hugo/static/icons.svg" | safeHTML }}
+{{ readFile "themes/rdvspeakers-theme-hugo/static/icons.svg" | safeHTML }}
 
 {{ block "header" . }}
 {{ partial "header.html" . }}
@@ -20,7 +20,7 @@
 {{ partial "footer.html" . }}
 {{ end }}
 
-<script src="/theme.js" async></script>
+<script src="./theme.js" async></script>
 {{ block "scripts" . }}
 <!-- No extra scripts -->
 {{ end }}
