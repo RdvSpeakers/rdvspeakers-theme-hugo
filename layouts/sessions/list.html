@@ -6,12 +6,15 @@
 		{{ $sessions := where $.Site.AllPages ".Section" "sessions" }}
 		{{ $types := apply $.Site.Data.formats "index" "." "key"  }}
 				
+
 		{{ range slice "1" "2" "3" "4" "5" }}
 			{{ $day := where $sessions ".Params.day" ( int . ) }}
 
 			{{ if $day }}
 
 			<h2>{{ index $.Site.Params.days . }}</h2>
+
+
 
 			<ul class="talks">
 			{{ range sort $day ".Params.key" }}	

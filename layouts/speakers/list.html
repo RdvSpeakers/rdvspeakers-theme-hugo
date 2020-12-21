@@ -4,8 +4,9 @@
 
 <section>
 	<ul class="speakers shuffle">
-		{{ $speakers := where .Site.AllPages ".Section" "speakers" }}
+		{{ $speakers := where .Site.AllPages ".Section" "in" (slice "speakers" "team")  }}
 		{{ range where $speakers ".Kind" "page" }}
+
 		<li>{{ partial "speaker.html" . }}</li>
 		{{ end }}
 	</ul>
