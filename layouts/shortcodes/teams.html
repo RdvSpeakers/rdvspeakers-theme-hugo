@@ -1,17 +1,11 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-{{ $site := .Site }}
-{{ range (split (.Get "types") ",") }}
+{{ $team := where .Site.AllPages ".Section" "team" }}
 <section class="members">
-	{{ $typeLabel := (split . "=") }}
-	{{ $type := (index $typeLabel 0) }}
-	{{ $label := (index $typeLabel 1) }}
-
-	<h2>{{ $label }}</h2>
-
 	<ul class="members shuffle">
-		{{ range where $site.AllPages "Params.type" $type }}
-		<li>{{ partial "team.html" . }}</li>
+		{{ range $team }}
+			{{ if isset .Params "key" }}
+			<li>{{ partial "team.html" . }}</li>
+			{{ end }}
 		{{ end }}
 	</ul>
 </section>
-{{ end }}

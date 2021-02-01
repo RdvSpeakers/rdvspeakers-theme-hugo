@@ -1,7 +1,11 @@
-<div class="photo" role="presentation" style="background-image: url('{{ .Params.photoURL }}');"></div>
+<a href="{{ .URL }}">
+	<div class="photo" role="presentation" style="background-image: url('{{ .Params.photoURL }}');"></div>
+</a>
 <div class="label">
-	<h3>{{ .Title }}</h3>
-	<h4>{{ .Params.subtitle }}</h4>
+	<a href="{{ .URL }}">
+		<h3>{{ .Title }}</h3>
+		<h4>{{ .Params.subtitle }}</h4>
+	</a>
 	<ul class="socials">
 		{{ range .Params.socials }}
 		<li>
