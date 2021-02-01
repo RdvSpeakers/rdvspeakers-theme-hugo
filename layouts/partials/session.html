@@ -5,9 +5,11 @@
 	<span class="language {{ anchorize .Params.language }}"></span>
 </h2>
 
+
 <hr>
 
 <div class="info">
+	<div class="time">{{ .Params.time }}</div>
 	{{ if.Params.tags }}
 	<div class="tags">
 		{{ range .Params.tags }}
@@ -21,7 +23,7 @@
 
 	<div class="complexity">{{ .Params.level }}</div>
 	<div class="type type-{{ anchorize .Params.format }}">
-		{{ index ( index (where .Site.Data.formats "key"  .Params.format) 0 ) "name" }}
+		{{ index ( index (where .Site.Data.formats "key"  .Params.format) 0 ) "name" }} ( {{ .Params.duration }} )
 	</div>
 
 	<div>
