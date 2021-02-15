@@ -7,7 +7,10 @@
 		{{ $speakers := where .Site.AllPages ".Section" "in" (slice "speakers" "team")  }}
 		{{ range where $speakers ".Kind" "page" }}
 
-		<li>{{ partial "speaker.html" . }}</li>
+			{{ if isset .Params "speaker" }}
+
+				<li>{{ partial "speaker.html" . }}</li>
+			{{ end }}
 		{{ end }}
 	</ul>
 </section>

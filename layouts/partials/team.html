@@ -3,15 +3,15 @@
 </a>
 <div class="label">
 	<a href="{{ .URL }}">
-		<h3>{{ .Title }}</h3>
-		<h4>{{ .Params.subtitle }}</h4>
+		<h3>{{ .Params.name }}</h3>
+		<h4>{{ .Params.company }}</h4>
 	</a>
 	<ul class="socials">
 		{{ range .Params.socials }}
 		<li>
 			<a class="social" rel="noreferrer" href="{{ .link }}" target="_blank">
-				{{ partial "icon.html" (lower .name) }}
-				{{- .name -}}
+				{{ partial "icon.html" (lower .icon) }}
+				{{- .icon -}}
 			</a>
 		</li>
 		{{ end }}

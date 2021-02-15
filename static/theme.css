@@ -562,35 +562,41 @@ a.social {
 #TableOfContents > ul > li > ul > li > a {
   font-weight: bold; }
 
-.speakers ul li .speaker {
+.speakers ul.speakers {
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: inherit; }
-  .speakers ul li .speaker .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-  .speakers ul li .speaker .speaker-img {
-    --size: 8rem;
-    height: var(--size, 8rem);
-    min-width: var(--size, 8rem);
-    border-radius: 100%;
-    background-size: cover;
-    margin: var(--space-2); }
-  .speakers ul li .speaker .speaker-company img {
-    max-height: 2rem;
-    margin: var(--space-1); }
-  .speakers ul li .speaker .speaker-company figcaption {
-    display: none; }
-  .speakers ul li .speaker .speaker-name {
-    font-weight: 600;
-    margin: var(--space-1); }
-  .speakers ul li .speaker .speaker-company {
-    font-weight: 200;
-    opacity: .8;
-    margin: var(--space-1); }
+  flex-wrap: wrap; }
+  .speakers ul.speakers > li {
+    flex: 1 1 300px;
+    margin: 2rem;
+    display: flex; }
+    .speakers ul.speakers > li .photo {
+      --size: 6rem;
+      box-shadow: 0 0 0 var(--space-2) var(--darken-2);
+      min-width: var(--size, 6rem);
+      height: var(--size, 6rem);
+      border-radius: 100%;
+      background-size: cover;
+      margin: var(--space-2); }
+    .speakers ul.speakers > li .label {
+      display: flex;
+      margin-left: var(--space-3);
+      flex-direction: column;
+      justify-content: center; }
+    .speakers ul.speakers > li ul.socials {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.5em; }
+      .speakers ul.speakers > li ul.socials li {
+        display: inline-block;
+        opacity: .5;
+        filter: grayscale(1);
+        transition: filter var(--animation); }
+        .speakers ul.speakers > li ul.socials li:hover, .speakers ul.speakers > li ul.socials li:focus {
+          opacity: 1;
+          filter: grayscale(0); }
 
 .tickets ul {
   list-style: none;
@@ -1546,18 +1552,6 @@ form input {
 
 .section.speakers .hero h1 {
   padding: 2rem var(--container-margin); }
-
-.section.speakers ul.speakers {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; }
-  .section.speakers ul.speakers > li {
-    margin: 1rem;
-    flex: 1 0 300px;
-    max-width: 450px; }
 
 .section.speakers a.speaker {
   padding: var(--space-4);

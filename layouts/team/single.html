@@ -25,7 +25,7 @@
 		<ul class="talks">
 			{{ range where .Site.RegularPages "Params.team" "intersect" (slice .Page.Params.key) }}
 			<li>
-				<a href="{{ .Permalink }}" class="visually-hidden">{{ .Title }}</a>
+				<a href="{{ .Permalink }}" class="visually-hidden">{{ .Name }}</a>
 				<a href="{{ .Permalink }}" class="talk tag-{{ anchorize (delimit (.Params.tags | default (slice))  "" ) }}">
 				<div class="tags">
 					{{ range .Params.tags }}
@@ -36,7 +36,7 @@
 				</div>		
 				<a href="{{ .Permalink }}" class="talk">
 					<span class="language {{ anchorize .Params.language }}"></span>
-					<h3 class="text">{{ .Title }}</h3>
+					<h3 class="text">{{ .Name }}</h3>
 				</a>
 			</li>
 			{{ end }}

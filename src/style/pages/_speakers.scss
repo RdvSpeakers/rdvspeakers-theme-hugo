@@ -7,21 +7,6 @@
     padding: 2rem var(--container-margin);
   }
 
-  ul.speakers {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    & > li {
-      margin: 1rem;
-      flex: 1 0 300px;
-      max-width: 450px;
-    }
-  }
-
   a.speaker {
     padding: var(--space-4);
     border: thin solid var(--darken-1);
